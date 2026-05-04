@@ -247,7 +247,7 @@ class Collator:
             .join(partition, on=self.cfg["group_id"])
         ).select(pl.col(self.cfg["subject_id"]).alias("subject_id"), "split")
 
-    def save_all(self, path: pathlib.Path = None, verbose: bool = False):
+    def save_all(self, verbose: bool = False):
         """save collated data and subject splits to disc, optionally w/ summary stats"""
         (df_all := self.get_all()).sink_parquet(
             self.processed_data_home / "meds.parquet", engine="streaming"
@@ -261,7 +261,8 @@ class Collator:
 
 
 if __name__ == "__main__":
-    self = Collator()
-    # self.save_all(verbose=True)
+    self = Collator(raw_data_home="./raw_data/raw-mimic/dev/")
+    self.save_all(verbose=True)
     # print(self.get_subject_splits())
     # breakpoint()
+

@@ -50,9 +50,7 @@ class Tokenizer:
             pathlib.Path(self.cfg.processed_data_home).expanduser().resolve()
         )
         self.bins = None
-        self.subject_splits = pl.scan_parquet(
-            self.processed_data_home / "subject_splits.parquet"
-        )
+        self.subject_splits = None
         self.lookup = None
         self.is_training = is_training
         self.created_dttm = (
@@ -63,9 +61,12 @@ class Tokenizer:
 
         self.logger = Logger()
         self.logger.info("Tokenizer initialized...")
-        self.logger.info(f"{self.processed_data_home=}")
 
     def get_data(self) -> pl.LazyFrame:
+        self.logger.info(f"Loading collated data with {self.processed_data_home=}")
+        self.subject_splits = pl.scan_parquet(
+            self.processed_data_home / "subject_splits.parquet"
+        )  # allows processed_data_home to be set after initialization
         return pl.scan_parquet(self.processed_data_home / "meds.parquet")
 
     @staticmethod
@@ -391,4 +392,4 @@ if __name__ == "__main__":
     assert self("EOS") != 0
     assert "#$%^&*()" not in self
 
-    breakpoint()
+    # breakpoint()
