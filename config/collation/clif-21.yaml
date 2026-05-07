@@ -66,6 +66,7 @@ entries:
 
   - table: clif_crrt_therapy
     prefix: CRRT
+    filter_expr: pl.col("crrt_mode_category").is_not_null()
     code: crrt_mode_category
     numeric_value: blood_flow_rate
     time: recorded_dttm
@@ -129,6 +130,14 @@ entries:
   - table: clif_patient_assessments
     prefix: ASMT
     filter_expr: pl.col("numerical_value").is_null()
+    with_col_expr: >-
+      pl.when(pl.col("assessment_category") == "cam_total").then(
+        pl.when(pl.col("categorical_value") == "Positive")
+          .then(pl.lit("Yes"))
+          .when(pl.col("categorical_value") == "Negative")
+          .then(pl.lit("No"))
+          .otherwise(pl.col("categorical_value"))
+      ).otherwise(pl.col("categorical_value")).alias("categorical_value")
     code: assessment_category
     text_value: categorical_value
     time: recorded_dttm

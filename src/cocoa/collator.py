@@ -249,9 +249,9 @@ class Collator:
 
     def save_all(self, verbose: bool = False):
         """save collated data and subject splits to disc, optionally w/ summary stats"""
-        (df_all := self.get_all()).sink_parquet(
-            self.processed_data_home / "meds.parquet", engine="streaming"
-        )
+        meds_path = self.processed_data_home / "meds.parquet"
+        meds_path.unlink(missing_ok=True)
+        (df_all := self.get_all()).sink_parquet(meds_path, engine="streaming")
         (df_splits := self.get_subject_splits()).write_parquet(
             self.processed_data_home / "subject_splits.parquet"
         )
@@ -265,4 +265,3 @@ if __name__ == "__main__":
     self.save_all(verbose=True)
     # print(self.get_subject_splits())
     # breakpoint()
-

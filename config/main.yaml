@@ -1,7 +1,7 @@
 %YAML 1.2
 ---
-raw_data_home: ./raw_data
-processed_data_home: ./processed
+raw_data_home: ./raw_data/raw-ucmc/dev
+processed_data_home: ./processed/ucmc
 
 collation_config: ./config/collation/clif-21.yaml
 tokenization_config: ./config/tokenization/clif-21.yaml

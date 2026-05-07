@@ -16,7 +16,7 @@ outcome_tokens:
   - SOFA//renal-4
   - SOFA//liver-4
   - SOFA//cv-4
-  - ASMT//cam_total_positive
+  - ASMT//cam_total_yes
 
 threshold:
   # choose one and only one of the following
@@ -24,7 +24,7 @@ threshold:
   # first_occurrence: XFR-IN//icu
   uniform_random: !!bool True
 
-horizon_after_threshold_s: !!int 864000 # 10d outcome window after prediction threshold
+# horizon_after_threshold_s: !!int 864000 # 10d outcome window after prediction threshold
 
 splits: #select which splits to prepare
   - train
