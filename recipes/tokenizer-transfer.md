@@ -50,7 +50,7 @@ raw_ucmc="${hm}/data-raw/ucmc-2.1.0"
 
    ```sh
    cocoa tokenize \
-     --tokenizer-home ./processed/tokenizer.yaml \
+     --tokenizer-home ./processed/mimic/tokenizer.yaml \
      --processed-data-home ./processed/ucmc \
      --verbose
    ```
@@ -63,5 +63,5 @@ raw_ucmc="${hm}/data-raw/ucmc-2.1.0"
      --verbose
 
    cocoa winnow \
-   --processed-data-home ./processed/ucmc
+     --processed-data-home ./processed/ucmc
    ```

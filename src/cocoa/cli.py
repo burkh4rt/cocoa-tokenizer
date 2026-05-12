@@ -6,6 +6,7 @@ CLI for cocoa - configurable collation and tokenization
 
 import pathlib
 import time
+from importlib.metadata import version
 from typing import Annotated, Optional
 
 import typer
@@ -17,7 +18,11 @@ from cocoa.collator import Collator
 from cocoa.tokenizer import Tokenizer
 from cocoa.winnower import Winnower
 
-app = typer.Typer(name="cocoa", help="Configurable collation and tokenization")
+__version__ = version("cocoa")
+
+app = typer.Typer(
+    name="cocoa", help=f"Configurable collation and tokenization (v{__version__})"
+)
 console = Console()
 
 
