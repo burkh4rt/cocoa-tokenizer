@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/1174829117.svg)](https://doi.org/10.5281/zenodo.20413460)
+
 # Cocoa: a configurable collator
 
 > ☕️ Chicago's second favorite bean
