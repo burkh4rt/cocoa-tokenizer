@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/1174829117.svg)](https://doi.org/10.5281/zenodo.20413460)
+[![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/bbj-lab/cocoa/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/bbj-lab/cocoa)
+
 # Cocoa: a configurable collator
 
 > ☕️ Chicago's second favorite bean
@@ -365,6 +368,8 @@ All of these things are placed in `processed_data_home` as configured.
 > trainer: [🦜 cotorra](https://github.com/bbj-lab/cotorra)
 <!-- prettier-ignore-end -->
 
+## (3) Winnowing
+
 ## 3 Winnowing
 
 The winnower prepares held-out timelines for evaluation by filtering and flagging
@@ -450,7 +455,7 @@ We provide a CLI:
 ```
  Usage: cocoa [OPTIONS] COMMAND [ARGS]...
 
- Configurable collation and tokenization (v26.3.1)
+ Configurable collation and tokenization (vXX.X.X)
 
 ╭─ Options ───────────────────────────────────────────────────────────────────╮
 │ --install-completion          Install completion for the current shell.     │
