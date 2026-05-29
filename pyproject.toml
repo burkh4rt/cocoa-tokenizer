@@ -53,3 +53,12 @@
         [tool.ruff.lint.isort]
             known-first-party       = [ "cocoa", "cotorra", "coreopsis" ]
             split-on-trailing-comma = false
+
+[tool.setuptools]
+    include-package-data = true
+
+    [tool.setuptools.packages.find]
+        where = [ "src" ]
+
+    [tool.setuptools.package-data]
+        "config" = [ "*.yaml" ]
