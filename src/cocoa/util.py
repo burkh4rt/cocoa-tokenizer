@@ -58,7 +58,22 @@ def combine_processed_data(
             f.write(OmegaConf.to_yaml(cfg0))
 
     for f in parquets:
-        pl.scan_parquet([d / f for d in input_dirs]).sink_parquet(
-            processed_data_home / f
-        )
+        try:
+            pl.scan_parquet([d / f for d in input_dirs]).sink_parquet(
+                processed_data_home / f
+            )
+        except (
+            pl.SchemaError
+        ):  # versions <=26.4.0 of tokenizer created Int64 tokens when loaded from json
+            schema = dict(pl.scan_parquet(input_dirs[0] / f).collect_schema())
+            tk_cols = [k for k in schema if "tokens" in k]
+            for k in tk_cols:
+                schema[k] = pl.List(pl.Int64)
+            pl.scan_parquet(
+                [d / f for d in input_dirs],
+                schema=schema,
+                cast_options=pl.ScanCastOptions(integer_cast="upcast"),
+            ).with_columns(
+                [pl.col(k).cast(pl.List(pl.UInt32)) for k in tk_cols]
+            ).sink_parquet(processed_data_home / f)
     return str(processed_data_home)

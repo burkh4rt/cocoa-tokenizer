@@ -5,6 +5,7 @@ tokenizes collated data into integer sequences, creating bins & a lookup table
 """
 
 import datetime
+import importlib.metadata as meta
 import pathlib
 import zoneinfo
 
@@ -322,6 +323,7 @@ class Tokenizer(Configurable):
                 "is_training": self.is_training,
                 "cfg": OmegaConf.to_container(self.cfg),
                 "created_dttm": self.created_dttm,
+                "cocoa_version": meta.version("cocoa"),
             }
         )
 
