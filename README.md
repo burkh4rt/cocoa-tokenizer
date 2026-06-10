@@ -31,7 +31,7 @@ tokenized electronic health records. [^1] [^2] [^3] [^4]
 You can download and install this package as follows:
 
 ```sh
-git clone --branch config-refactor git@github.com:bbj-lab/cocoa.git
+git clone git@github.com:bbj-lab/cocoa.git
 cd cocoa
 python -m venv .venv
 . .venv/bin/activate
@@ -422,33 +422,6 @@ horizon_after_threshold_s: !!int 2592000 # 30d outcome window after prediction t
   occurred in the respective time period.
 
 ## Usage
-
-Collation requires `raw_data_home` (the directory containing your raw parquet or
-csv tables) and each command requires `processed_data_home` (where outputs will
-be written). Default configuration for collation, tokenization, and winnowing
-ships with the package; you can override any of them by passing a YAML file with
-`--collation-config`, `--tokenization-config`, or `--winnowing-config`.
-
-Both `Collator`, `Tokenizer`, and `Winnower` also accept `**kwargs` that are
-merged on top of the loaded config via OmegaConf, so any config value can be
-overridden programmatically:
-
-```python
-from cocoa.collator import Collator
-from cocoa.tokenizer import Tokenizer
-
-collator = Collator(
-    raw_data_home="~/path/to/raw",
-    processed_data_home="~/path/to/output",
-)
-tokenizer = Tokenizer(
-    processed_data_home="~/path/to/output",
-    n_bins=20,
-    fused=False,
-)
-```
-
-### CLI
 
 We provide a CLI that should be sufficient for most use cases:
 

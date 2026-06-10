@@ -29,7 +29,7 @@ ordering:
   - DSCG
   - EOS
 
-insert_spacers: !!bool false
+insert_spacers: !!bool true
 spacers:
   5m-15m: 5 # produces token TIME//5m-15m
   15m-1h: 15
