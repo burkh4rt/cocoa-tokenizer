@@ -21,6 +21,14 @@ reference:
       validation: "m:1"
       with_col_expr: pl.lit("age").alias("AGE")
 
+pass_through_columns: # copy these from reference table to "subject_splits.parquet"
+  - age_at_admission
+  - admission_type_category
+  - race_category
+  - ethnicity_category
+  - sex_category
+  - language_category
+
 entries:
   - table: REFERENCE
     prefix: RACE

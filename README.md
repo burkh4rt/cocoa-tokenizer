@@ -469,7 +469,7 @@ with commands:
   │    --verbose              -v            Verbose logging for collate; this   │
   │                                         may cause memory issues with large  │
   │                                         datasets                            │
-  │    --help                               Show this message and exit.         │
+  │    --help                 -h            Show this message and exit.         │
   ╰─────────────────────────────────────────────────────────────────────────────╯
   ```
 
@@ -492,7 +492,7 @@ with commands:
   │    --verbose              -v            Verbose logging for collate; this   │
   │                                         may cause memory issues with large  │
   │                                         datasets                            │
-  │    --help                               Show this message and exit.         │
+  │    --help                 -h            Show this message and exit.         │
   ╰─────────────────────────────────────────────────────────────────────────────╯
   ```
 
@@ -512,7 +512,7 @@ with commands:
   │ *  --processed-data-home  -p      TEXT  Processed data directory [required] │
   │    --verbose              -v            Verbose logging for winnow; prints  │
   │                                         summary statistics                  │
-  │    --help                               Show this message and exit.         │
+  │    --help                 -h            Show this message and exit.         │
   ╰─────────────────────────────────────────────────────────────────────────────╯
   ```
 
@@ -533,7 +533,7 @@ with commands:
   │ *  --raw-data-home        -r      TEXT  Raw data directory [required]       │
   │ *  --processed-data-home  -p      TEXT  Processed data directory [required] │
   │    --verbose              -v            Verbose logging for pipeline steps  │
-  │    --help                               Show this message and exit.         │
+  │    --help                 -h            Show this message and exit.         │
   ╰─────────────────────────────────────────────────────────────────────────────╯
   ```
 

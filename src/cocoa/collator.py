@@ -250,7 +250,18 @@ class Collator(Configurable):
         except Exception as e:
             self.logger.warning(f"Streaming write failed: {e}")
             df_all.sink_parquet(meds_path, engine="in-memory", mkdir=True)
-        (df_splits := self.get_subject_splits()).write_parquet(
+        df_splits = self.get_subject_splits()
+        if "pass_through_columns" in self.cfg:
+            df_splits = df_splits.join(
+                self.reference_frame.select(
+                    pl.col(self.cfg["subject_id"]).alias("subject_id"),
+                    *self.cfg.pass_through_columns,
+                ).collect(),
+                on="subject_id",
+                how="inner",
+                validate="1:1",
+            )
+        df_splits.write_parquet(
             self.processed_data_home / "subject_splits.parquet", mkdir=True
         )
 
@@ -260,7 +271,7 @@ class Collator(Configurable):
 
 if __name__ == "__main__":
     self = Collator(
-        raw_data_home="./raw_data/raw-mimic/dev/",
+        raw_data_home="./raw-data/raw-mimic/dev/",
         processed_data_home="./processed/mimic/",
     )
     self.save_all(verbose=True)
