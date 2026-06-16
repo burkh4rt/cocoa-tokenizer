@@ -1,10 +1,3 @@
-[![DOI](img/1174829117.svg)](https://doi.org/10.5281/zenodo.20413460)
-[![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/bbj-lab/cocoa/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/bbj-lab/cocoa)
-
-# Cocoa: a configurable collator
-
-> ☕️ Chicago's second favorite bean
-
 <p align="center">
 <img src="img/cocoa-bean.png" alt="cocoa bean" width="400" style="display: block;
 margin: 0 auto; -webkit-mask-image: radial-gradient(
@@ -18,6 +11,13 @@ margin: 0 auto; -webkit-mask-image: radial-gradient(
     rgba(0,0,0,0) 100%
   );"/>
 </p>
+
+# Cocoa: a configurable collator
+
+[![DOI](img/1174829117.svg)](https://doi.org/10.5281/zenodo.20413460)
+[![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/bbj-lab/cocoa/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/bbj-lab/cocoa)
+
+> ☕️ Chicago's second favorite bean
 
 ## About
 
