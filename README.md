@@ -15,7 +15,7 @@ margin: 0 auto; -webkit-mask-image: radial-gradient(
 
 # Cocoa: a configurable collator
 
-![PyPI Version](https://img.shields.io/pypi/v/cocoa-tokenizer)
+[![PyPI Version](https://img.shields.io/pypi/v/cocoa-tokenizer)](https://pypi.org/project/cocoa-tokenizer/)
 [![DOI](https://raw.githubusercontent.com/burkh4rt/cocoa/master/img/1174829117.svg)](https://doi.org/10.5281/zenodo.20413460)
 [![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/bbj-lab/cocoa/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/bbj-lab/cocoa)
 
