@@ -1,16 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/burkh4rt/cocoa/master/img/cocoa-bean.png"
-alt="cocoa bean" width="400" style="display: block;
-margin: 0 auto; -webkit-mask-image: radial-gradient(
-    ellipse at center,
-    rgba(0,0,0,1) 50%,
-    rgba(0,0,0,0) 100%
-  );
-  mask-image: radial-gradient(
-    ellipse at center,
-    rgba(0,0,0,1) 50%,
-    rgba(0,0,0,0) 100%
-  );"/>
+<img src="https://raw.githubusercontent.com/burkh4rt/cocoa/master/img/cocoa-bean.png" alt="cocoa bean" width="400"/>
 </p>
 
 # Cocoa: a configurable collator
@@ -663,5 +652,11 @@ python3 -m pip install --upgrade build
 python3 -m build
 python3 -m pip install --upgrade twine
 python3 -m twine upload --repository pypi dist/*
+```
+
+Make docs:
+```
+mkdocs build
+mkdocs serve --dev-addr 127.0.0.1:8001
 ```
 -->
