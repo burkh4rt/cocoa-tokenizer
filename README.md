@@ -627,10 +627,11 @@ Send to bbj-lab1:
 ```
 rsync -avht \
  --delete \
- --exclude "raw_data/" \
+ --exclude "output" \
+ --exclude "data-raw" \
  --exclude "processed/" \
- --exclude ".venv/" \
- --exclude ".idea/" \
+ --exclude ".venv" \
+ --exclude ".idea" \
  ~/Documents/chicago/cocoa \
  bbj-lab1:~
 ```

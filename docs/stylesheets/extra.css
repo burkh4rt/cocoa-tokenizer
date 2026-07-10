@@ -60,6 +60,8 @@
   --md-code-hl-keyword-color: #007396;
   --md-code-hl-string-color: #275d38;
   --md-code-hl-special-color: #a4343a;
+  --md-code-hl-function-color: #86647a;
+  --md-code-hl-constant-color: #59315f;
 }
 
 h1 {
