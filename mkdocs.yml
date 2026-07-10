@@ -6,8 +6,8 @@ repo_name: bbj-lab/cocoa
 
 theme:
   name: material
-  icon:
-    logo: material/coffee
+  logo: svg/emoji_u2615.svg
+  favicon: svg/emoji_u2615.svg
   font: false
   palette:
     - media: "(prefers-color-scheme: light)"

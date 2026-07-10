@@ -30,7 +30,14 @@ tokenized electronic health records. [^1] [^2] [^3] [^4]
 
 ## Installation
 
-You can download and install this package as follows:
+Install the latest release from PyPI:
+
+```sh
+pip install cocoa-tokenizer
+```
+
+This installs the `cocoa` command. To work from source instead (e.g. for
+development):
 
 ```sh
 git clone git@github.com:bbj-lab/cocoa.git
@@ -49,8 +56,8 @@ in the output represents an event with a `subject_id`, `time`, `code` (all
 mandatory), and optional `numeric_value` / `text_value` columns.
 
 Collation is driven by a YAML config (the package ships a default; see
-[`./src/cocoa/config/collation.yaml`](https://github.com/bbj-lab/cocoa/blob/master/src/cocoa/config/collation.yaml)) that
-specifies:
+[`./src/cocoa/config/collation.yaml`](https://github.com/bbj-lab/cocoa/blob/master/src/cocoa/config/collation.yaml))
+that specifies:
 
 - A **reference table** with a primary key (`subject_id`), start/end times, and
   optional augmentation joins (e.g. joining a patient demographics table).
@@ -423,8 +430,8 @@ subjects based on outcome criteria. It:
 5. Outputs a winnowed dataset suitable for inference and evaluation tasks.
 
 Winnowing is driven by a YAML config (the package ships a default; see
-[`./src/cocoa/config/winnowing.yaml`](https://github.com/bbj-lab/cocoa/blob/master/src/cocoa/config/winnowing.yaml)) that
-specifies:
+[`./src/cocoa/config/winnowing.yaml`](https://github.com/bbj-lab/cocoa/blob/master/src/cocoa/config/winnowing.yaml))
+that specifies:
 
 - `outcome_tokens` — list of event codes to track as outcomes (e.g.,
   `XFR-IN//icu`, `DSCG//expired`). The winnower creates binary flags for each
@@ -521,11 +528,13 @@ with commands:
 
   ╭─ Options ───────────────────────────────────────────────────────────────────╮
   │    --tokenization-config  -c      PATH  Tokenization configuration file     │
-  │                                         (overrides config)                  │
+  │                                         (overrides default)                 │
   │ *  --processed-data-home  -p      TEXT  Processed data directory [required] │
-  │    --tokenizer-home       -t      TEXT  Use a pretrained tokenizer at this  │
-  │                                         path (overrides config)             │
-  │    --verbose              -v            Verbose logging for collate; this   │
+  │    --tokenizer-home       -t      TEXT  Load a previously learned tokenizer │
+  │                                         from this tokenizer.yaml file       │
+  │                                         (reuses its frozen vocabulary and   │
+  │                                         bins)                               │
+  │    --verbose              -v            Verbose logging for tokenize; this  │
   │                                         may cause memory issues with large  │
   │                                         datasets                            │
   │    --help                 -h            Show this message and exit.         │
@@ -544,7 +553,7 @@ with commands:
 
   ╭─ Options ───────────────────────────────────────────────────────────────────╮
   │    --winnowing-config     -c      PATH  Winnowing configuration file        │
-  │                                         (overrides config)                  │
+  │                                         (overrides default)                 │
   │ *  --processed-data-home  -p      TEXT  Processed data directory [required] │
   │    --verbose              -v            Verbose logging for winnow; prints  │
   │                                         summary statistics                  │
@@ -561,11 +570,11 @@ with commands:
 
   ╭─ Options ───────────────────────────────────────────────────────────────────╮
   │    --collation-config             PATH  Collation configuration file        │
-  │                                         (overrides config)                  │
+  │                                         (overrides default)                 │
   │    --tokenization-config          PATH  Tokenization configuration file     │
-  │                                         (overrides config)                  │
+  │                                         (overrides default)                 │
   │    --winnowing-config             PATH  Winnowing configuration file        │
-  │                                         (overrides config)                  │
+  │                                         (overrides default)                 │
   │ *  --raw-data-home        -r      TEXT  Raw data directory [required]       │
   │ *  --processed-data-home  -p      TEXT  Processed data directory [required] │
   │    --verbose              -v            Verbose logging for pipeline steps  │

@@ -87,10 +87,12 @@
 
 /* Dark (slate) scheme: maroon is too dark to read as a link on a dark
    background, so links and accents shift to a lighter rose that echoes it.
-   The header keeps the full maroon (white text stays high-contrast). */
+   The header keeps the full maroon (white text stays high-contrast).
+   The page background is lifted from Material's near-black to dark greystone. */
 [data-md-color-scheme="slate"] {
   --md-accent-fg-color: #800000;
   --md-typeset-a-color: #800000;
+  --md-default-bg-color: #737373; /* dark greystone */
 }
 
 /* Bold the site name in the header. The first .md-header__topic is the site

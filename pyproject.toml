@@ -38,7 +38,7 @@
         Repository    = "https://github.com/bbj-lab/cocoa"
 
     [project.optional-dependencies]
-        all = [ "cotorra[dev,docs]" ]
+        all = [ "cocoa-tokenizer[dev,docs]" ]
         dev = [ "pip", "ruff" ]
         docs = [
             "mkdocs",
