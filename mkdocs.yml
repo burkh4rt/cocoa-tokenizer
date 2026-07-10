@@ -51,15 +51,17 @@ plugins:
           options:
             show_source: true
             show_bases: true
-            show_root_heading: true
+            show_root_heading: false
+            show_root_toc_entry: false
+            heading_level: 3
 
 nav:
   - Home: index.md
   - API Reference:
+      - CLI: api/cli.md
       - Collator: api/collator.md
       - Tokenizer: api/tokenizer.md
       - Winnower: api/winnower.md
-      - CLI: api/cli.md
   - Recipes:
       - Overview: recipes/index.md
       - Configure New Token: recipes/configure-new-token.md

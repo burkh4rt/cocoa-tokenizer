@@ -2,27 +2,12 @@
 
 In this example, we'll train a tokenizer on mimic and apply it to ucmc.
 
-<details>
+0. Set the paths to your raw datasets:
 
-<summary>0. Localize filenames by cluster.</summary>
-
-```sh
-case "$(uname -n)" in
-    cri*)
-        hm="/gpfs/data/bbj-lab/users/burkh4rt"
-        ;;
-    bbj-lab*)
-        hm="/mnt/bbj-lab/users/burkh4rt"
-        ;;
-    *)
-        echo "Unknown host $(uname -n)"
-        ;;
-esac
-raw_mimic="${hm}/data-raw/mimic-2.1.0"
-raw_ucmc="${hm}/data-raw/ucmc-2.1.0"
-```
-
-</details>
+    ```sh
+    raw_mimic="/path/to/data-raw/mimic-2.1.0"
+    raw_ucmc="/path/to/data-raw/ucmc-2.1.0"
+    ```
 
 1. Run collation on each dataset separately with the same config:
 

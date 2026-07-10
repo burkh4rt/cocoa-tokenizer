@@ -295,8 +295,8 @@ integer token sequences suitable for sequence models. It:
 1. Adds `BOS` / `EOS` (beginning/end-of-sequence) tokens to each subject's
    timeline.
 2. Optionally inserts configurable clock tokens to mark the passage of time.
-3. Optionally inserts configurable time spacing tokens between events.
-4. Computes quantile-based bins for numeric values (from training data only).
+3. Computes quantile-based bins for numeric values (from training data only).
+4. Optionally inserts configurable time spacing tokens between events.
 5. Maps codes (and optionally their binned values) to integer tokens via a
    vocabulary that is formed during training and is frozen for tuning/held-out
    data.
@@ -323,13 +323,15 @@ that specifies:
 
 ### Outputs
 
-- `tokens_times.parquet` gives one row per subject with three columns by default:
+- `tokens_times.parquet` gives one row per subject. By default it has three
+  columns:
     - `subject_id`
     - `tokens` — the integer token sequence for the subject's timeline.
     - `times` — a parallel list of timestamps, one per token, indicating when
       each event occurred.
-    - `numeric_values` - corresponding values for numeric value tokens (only if
-      configured)
+
+    A fourth column, `numeric_values`, holding the corresponding values for
+    numeric value tokens, is added only when `include_numeric_values` is set.
 
     The table will look something like this:
 
@@ -432,6 +434,8 @@ that specifies:
       the provided token
 - `horizon_after_threshold_s` is an optional parameter that allows you to set a
   prediction window (in seconds) after the threshold is triggered
+- `splits` — an optional list selecting which splits to prepare (defaults to
+  `held_out`). Rep-based inference also requires the `train` and `tuning` splits.
 
 **Example configuration:**
 
@@ -447,6 +451,11 @@ threshold:
     # first_occurrence: XFR-IN//icu
 
 horizon_after_threshold_s: !!int 2592000 # 30d outcome window after prediction threshold
+
+splits: # select which splits to prepare
+    - train
+    - tuning
+    - held_out
 ```
 
 ### Outputs

@@ -49,9 +49,9 @@ preprocessing completed successfully (`pl.col("_convert_status") == "success"`).
         time: admin_dttm
     ```
 
-2. Now when collation is run, codes such as `MED-INT//acetaminophen`,
-   `MED-INT//acetaminophen`, `MED-INT//adenosine`, `MED-INT//adenosine` will be
-   generated and inserted into the `meds.parquet` file along with
+2. Now when collation is run, codes such as `MED-INT//morphine`,
+   `MED-INT//sodium_bicarbonate`, `MED-INT//dextrose`, `MED-INT//hydromorphone`
+   will be generated and inserted into the `meds.parquet` file along with
    `med_dose_converted` in the `numeric_value` column:
 
     ```
