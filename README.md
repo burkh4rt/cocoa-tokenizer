@@ -49,7 +49,7 @@ in the output represents an event with a `subject_id`, `time`, `code` (all
 mandatory), and optional `numeric_value` / `text_value` columns.
 
 Collation is driven by a YAML config (the package ships a default; see
-[`./src/cocoa/config/collation.yaml`](./src/cocoa/config/collation.yaml)) that
+[`./src/cocoa/config/collation.yaml`](https://github.com/bbj-lab/cocoa/blob/master/src/cocoa/config/collation.yaml)) that
 specifies:
 
 - A **reference table** with a primary key (`subject_id`), start/end times, and
@@ -308,7 +308,7 @@ integer token sequences suitable for sequence models. It:
    configurable sort order.
 
 Tokenization is driven by its own YAML config (the package ships a default; see
-[`./src/cocoa/config/tokenization.yaml`](./src/cocoa/config/tokenization.yaml))
+[`./src/cocoa/config/tokenization.yaml`](https://github.com/bbj-lab/cocoa/blob/master/src/cocoa/config/tokenization.yaml))
 that specifies:
 
 - `n_bins` — number of quantile bins for numeric values.
@@ -423,7 +423,7 @@ subjects based on outcome criteria. It:
 5. Outputs a winnowed dataset suitable for inference and evaluation tasks.
 
 Winnowing is driven by a YAML config (the package ships a default; see
-[`./src/cocoa/config/winnowing.yaml`](./src/cocoa/config/winnowing.yaml)) that
+[`./src/cocoa/config/winnowing.yaml`](https://github.com/bbj-lab/cocoa/blob/master/src/cocoa/config/winnowing.yaml)) that
 specifies:
 
 - `outcome_tokens` — list of event codes to track as outcomes (e.g.,
@@ -575,7 +575,7 @@ with commands:
 
 <!-- prettier-ignore-start -->
 > [!TIP]
-> For common use cases, check out the [recipes](./recipes/README.md) section!
+> For common use cases, check out the [recipes](https://github.com/bbj-lab/cocoa/blob/master/recipes/README.md) section!
 <!-- prettier-ignore-end -->
 
 [^1]:

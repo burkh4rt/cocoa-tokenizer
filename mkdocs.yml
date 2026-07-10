@@ -54,6 +54,7 @@ validation:
 
 plugins:
   - search
+  - include-markdown
   - mkdocstrings:
       handlers:
         python:
