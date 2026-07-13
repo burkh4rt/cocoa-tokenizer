@@ -17,6 +17,8 @@ a single denormalized dataframe and create tokenized timelines from the results.
 It benefits from previous experience collating data to train foundation models on
 tokenized electronic health records. [^1] [^2] [^3] [^4]
 
+<!-- cards-anchor -->
+
 ## Installation
 
 Install the latest release from PyPI:
@@ -667,5 +669,10 @@ Make docs:
 ```
 mkdocs build
 mkdocs serve --dev-addr 127.0.0.1:8001
+```
+
+Make tag:
+```
+git tag -s v26.6.1 -m "docs may be read"
 ```
 -->

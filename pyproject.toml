@@ -1,8 +1,8 @@
 [project]
     authors = [
         { name = "Michael C. Burkhart", email = "burkh4rt@uchicago.edu" },
-        { name = "Luke Solo", email = "lsolo@uchicago.edu" },
         { name = "Inhyeok Lee", email = "ihlee@uchicago.edu" },
+        { name = "Luke Solo", email = "lsolo@uchicago.edu" },
         { name = "S'Khaja Charles", email = "skhaja@uchicago.edu" },
         { name = "Brett K. Beaulieu-Jones", email = "beaulieujones@uchicago.edu" },
     ]
@@ -45,6 +45,8 @@
             "mkdocs-material",
             "mkdocstrings[python]",
             "mkdocs-include-markdown-plugin",
+            "mkdocs-callouts",
+            "mkdocs-git-revision-date-localized-plugin",
         ]
 
 [build-system]
