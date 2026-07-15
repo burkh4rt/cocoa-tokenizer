@@ -330,7 +330,7 @@ class Tokenizer(Configurable):
                 "is_training": self.is_training,
                 "cfg": OmegaConf.to_container(self.cfg),
                 "created_dttm": self.created_dttm,
-                "cocoa_version": meta.version("cocoa"),
+                "cocoa_version": meta.version("cocoa-tokenizer"),
             }
         )
 
